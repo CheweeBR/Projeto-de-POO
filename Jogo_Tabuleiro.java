@@ -1,22 +1,22 @@
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
 public class Jogo_Tabuleiro extends Jogo {
-    private Boolean ManualRegras;
+    private String ManualRegras;
     private int qntpeças;
     private int qntdados;
 
-    protected Jogo_Tabuleiro(String nome, String marca, Float valor, int qntPlayers, int qntpeças, int qntdados,
-            Boolean manual) {
+    public Jogo_Tabuleiro(String nome, String marca, Float valor, int qntPlayers, int qntpeças, int qntdados,
+            String ManualRegras) {
         super(nome, marca, valor, qntPlayers);
         this.qntpeças = qntpeças;
         this.qntdados = qntdados;
-        this.ManualRegras = manual;
+        this.ManualRegras = ManualRegras;
     }
 
     public Jogo_Tabuleiro() {
         this.qntpeças = 1;
         this.qntdados = 1;
-        this.ManualRegras = false;
+        this.ManualRegras = "";
     }
 
     public int getQntpeças() {
@@ -35,12 +35,12 @@ public class Jogo_Tabuleiro extends Jogo {
         this.qntdados = qntdados;
     }
 
-    public Boolean getManual() {
-        return ManualRegras;
+    public void setManualRegras(String manualRegras) {
+        ManualRegras = manualRegras;
     }
 
-    public void setManual(Boolean manualRegras) {
-        this.ManualRegras = manualRegras;
+    public String getManualRegras() {
+        return ManualRegras;
     }
 
 }

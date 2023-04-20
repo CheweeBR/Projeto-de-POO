@@ -5,7 +5,7 @@ public class Jogo_Cartas extends Jogo {
     private int qntBaralho;
     private int qntCartas;
 
-    protected Jogo_Cartas() {
+    public Jogo_Cartas() {
         material = "";
         qntBaralho = 0;
         qntCartas = 0;

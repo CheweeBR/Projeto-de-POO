@@ -14,10 +14,18 @@ public class Jogo_Eletronico extends Jogo {
         this.avaliação = avaliação;
     }
 
-    protected Jogo_Eletronico() {
+    public Jogo_Eletronico() {
         plataforma = "";
         conectividade = "";
         avaliação = 0f;
+    }
+
+    public String getConectividade() {
+        return conectividade;
+    }
+
+    public void setConectividade(String conectividade) {
+        this.conectividade = conectividade;
     }
 
     public String getPlataforma() {
@@ -26,14 +34,6 @@ public class Jogo_Eletronico extends Jogo {
 
     public void setPlataforma(String plataforma) {
         this.plataforma = plataforma;
-    }
-
-    public String getRequisitos() {
-        return conectividade;
-    }
-
-    public void setRequisitos(String conectividade) {
-        this.conectividade = conectividade;
     }
 
     public float getAvaliação() {
