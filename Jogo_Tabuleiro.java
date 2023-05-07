@@ -36,7 +36,7 @@ public class Jogo_Tabuleiro extends Jogo {
     }
 
     public void setManualRegras(String manualRegras) {
-        ManualRegras = manualRegras;
+        this.ManualRegras = manualRegras;
     }
 
     public String getManualRegras() {
