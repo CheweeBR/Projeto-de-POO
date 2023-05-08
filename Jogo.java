@@ -34,6 +34,7 @@ public abstract class Jogo {
 
     public void setValor(Float valor) {
         this.valor = valor;
+
     }
 
     public int getQntPlayers() {
@@ -52,4 +53,9 @@ public abstract class Jogo {
         this.nome = nome;
     }
 
+    /*
+     * public void adicionar_lucro(Jogo_Cartas tipo) {
+     * tipo.adicionar_lucro(tipo);
+     * }
+     */
 }

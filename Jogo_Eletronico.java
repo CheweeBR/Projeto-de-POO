@@ -44,4 +44,7 @@ public class Jogo_Eletronico extends Jogo {
         this.avaliação = avaliação;
     }
 
+    public void adicionar_lucro() {
+        setValor(getValor() + 20f);
+    }
 }

@@ -43,4 +43,7 @@ public class Jogo_Tabuleiro extends Jogo {
         return ManualRegras;
     }
 
+    public void adicionar_lucro() {
+        setValor(getValor() + 15.50f);
+    }
 }

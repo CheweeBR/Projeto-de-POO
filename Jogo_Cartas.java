@@ -43,4 +43,7 @@ public class Jogo_Cartas extends Jogo {
         this.qntCartas = qntCartas;
     }
 
+    public void adicionar_lucro() {
+        setValor(getValor() + 11.50f);
+    }
 }

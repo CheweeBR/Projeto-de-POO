@@ -15,6 +15,7 @@ public class Principal {
             case 1:
                 cartas.setNome(ler.EntDados("Nome: "));
                 cartas.setMarca(ler.EntDados("Marca: "));
+                cartas.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
                 cartas.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 cartas.setMaterial(ler.EntDados("Material: "));
                 cartas.setQntBaralho(Integer.parseInt(ler.EntDados("Quantidade de Baralho: ")));
@@ -22,6 +23,7 @@ public class Principal {
                 System.out.println("=========================\n Dados do Jogo de cartas \n=========================");
                 System.out.println("Nome: " + cartas.getNome());
                 System.out.println("Marca: " + cartas.getMarca());
+                System.out.println("Valor: R$" + cartas.getValor());
                 System.out.println("Quantidade de jogadores: " + cartas.getQntPlayers());
                 System.out.println("Material: " + cartas.getMaterial());
                 System.out.println("Quantidade de Baralho: " + cartas.getQntBaralho());
@@ -46,14 +48,17 @@ public class Principal {
             case 3:
                 eletronico.setNome(ler.EntDados("Nome: "));
                 eletronico.setMarca(ler.EntDados("Marca: "));
+                eletronico.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
                 eletronico.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 eletronico.setPlataforma(ler.EntDados("Plataforma: "));
                 eletronico.setAvaliação(Float.parseFloat(ler.EntDados("Avaliação: ")));
                 eletronico.setConectividade(ler.EntDados("Conectividade (online/Local): "));
+                eletronico.adicionar_lucro();
                 System.out.println(
                         "=========================\n Dados do Jogo Eletronico \n=========================");
                 System.out.println("Nome: " + eletronico.getNome());
                 System.out.println("Marca: " + eletronico.getMarca());
+                System.out.println("Valor: R$" + eletronico.getValor());
                 System.out.println("Quantidade de jogadores: " + eletronico.getQntPlayers());
                 System.out.println("Plataforma: " + eletronico.getPlataforma());
                 System.out.println("Avaliação: " + eletronico.getAvaliação());
