@@ -43,7 +43,8 @@ public class Jogo_Tabuleiro extends Jogo {
         return ManualRegras;
     }
 
+    // Polimorfismo por sobreescrita, cada classe tem uma % de lucro diferente.
     public void adicionar_lucro() {
-        setValor(getValor() + 15.50f);
+        setValor(getValor() * 2.5f);
     }
 }

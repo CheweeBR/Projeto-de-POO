@@ -44,7 +44,8 @@ public class Jogo_Eletronico extends Jogo {
         this.avaliação = avaliação;
     }
 
+    // Polimorfismo por sobreescrita, cada classe tem uma % de lucro diferente.
     public void adicionar_lucro() {
-        setValor(getValor() + 20f);
+        setValor(getValor() * 1.75f);
     }
 }

@@ -43,7 +43,8 @@ public class Jogo_Cartas extends Jogo {
         this.qntCartas = qntCartas;
     }
 
+    // Polimorfismo por sobreescrita, cada classe tem uma % de lucro diferente.
     public void adicionar_lucro() {
-        setValor(getValor() + 11.50f);
+        setValor(getValor() * 1.5f);
     }
 }
