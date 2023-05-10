@@ -3,21 +3,21 @@
 public class Jogo_Eletronico extends Jogo implements Interface {
     private String plataforma;
     private String conectividade;
-    private float avaliação;
+    private float avaliacao;
 
     public Jogo_Eletronico(String nome, String marca, Float valor, int qntPlayers, String plataforma,
             String conectividade,
-            float avaliação) {
+            float avaliacao) {
         super(nome, marca, valor, qntPlayers);
         this.plataforma = plataforma;
         this.conectividade = conectividade;
-        this.avaliação = avaliação;
+        this.avaliacao = avaliacao;
     }
 
     public Jogo_Eletronico() {
         plataforma = "";
         conectividade = "";
-        avaliação = 0f;
+        avaliacao = 0f;
     }
 
     public String getConectividade() {
@@ -36,12 +36,12 @@ public class Jogo_Eletronico extends Jogo implements Interface {
         this.plataforma = plataforma;
     }
 
-    public float getAvaliação() {
-        return avaliação;
+    public float getAvaliacao() {
+        return avaliacao;
     }
 
-    public void setAvaliação(float avaliação) {
-        this.avaliação = avaliação;
+    public void setAvaliacao(float avaliacao) {
+        this.avaliacao = avaliacao;
     }
 
     // Polimorfismo por sobreescrita, cada classe tem uma % de lucro diferente.

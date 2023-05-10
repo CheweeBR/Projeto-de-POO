@@ -2,29 +2,29 @@
 
 public class Jogo_Tabuleiro extends Jogo {
     private String ManualRegras;
-    private int qntpeças;
+    private int qntpecas;
     private int qntdados;
 
-    public Jogo_Tabuleiro(String nome, String marca, Float valor, int qntPlayers, int qntpeças, int qntdados,
+    public Jogo_Tabuleiro(String nome, String marca, Float valor, int qntPlayers, int qntpecas, int qntdados,
             String ManualRegras) {
         super(nome, marca, valor, qntPlayers);
-        this.qntpeças = qntpeças;
+        this.qntpecas = qntpecas;
         this.qntdados = qntdados;
         this.ManualRegras = ManualRegras;
     }
 
     public Jogo_Tabuleiro() {
-        this.qntpeças = 1;
+        this.qntpecas = 1;
         this.qntdados = 1;
         this.ManualRegras = "";
     }
 
-    public int getQntpeças() {
-        return qntpeças;
+    public int getQntpecas() {
+        return qntpecas;
     }
 
-    public void setQntpeças(int qntpeças) {
-        this.qntpeças = qntpeças;
+    public void setQntpecas(int qntpecas) {
+        this.qntpecas = qntpecas;
     }
 
     public int getQntdados() {

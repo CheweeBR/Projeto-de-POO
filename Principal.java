@@ -7,7 +7,6 @@ public class Principal {
         Jogo_Cartas cartas = new Jogo_Cartas();
         Jogo_Tabuleiro tabuleiro = new Jogo_Tabuleiro();
         Jogo_Eletronico eletronico = new Jogo_Eletronico();
-
         System.out.println("==================\n Tipos de Jogos  \n==================");
         System.out.println(" [1] Cartas\n [2] Tabuleiro\n [3] Eletronico  \n==================");
         alt = Integer.parseInt(ler.EntDados("Alternativa: "));
@@ -46,7 +45,7 @@ public class Principal {
                 tabuleiro.adicionar_lucro();
                 tabuleiro.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 tabuleiro.setManualRegras(ler.EntDados("Possui manual: "));
-                tabuleiro.setQntpeças(Integer.parseInt(ler.EntDados("Quantidade de peças: ")));
+                tabuleiro.setQntpecas(Integer.parseInt(ler.EntDados("Quantidade de peças: ")));
                 System.out.println(
                         "========================\n Dados do Jogo de tabuleiro \n========================");
                 System.out.println("Nome: " + tabuleiro.getNome());
@@ -55,7 +54,7 @@ public class Principal {
                 System.out.println("Quantidade de jogadores: " + tabuleiro.getQntPlayers());
                 System.out.println("Possui manual: " + tabuleiro.getManualRegras());
                 System.out.println("Quantidade de dados: " + tabuleiro.getQntdados());
-                System.out.println("Quantidade de peças: " + tabuleiro.getQntpeças());
+                System.out.println("Quantidade de peças: " + tabuleiro.getQntpecas());
                 break;
             case 3:
                 try {
@@ -68,7 +67,7 @@ public class Principal {
                 eletronico.adicionar_lucro();
                 eletronico.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 eletronico.setPlataforma(ler.EntDados("Plataforma: "));
-                eletronico.setAvaliação(Float.parseFloat(ler.EntDados("Avaliação: ")));
+                eletronico.setAvaliacao(Float.parseFloat(ler.EntDados("Avaliação: ")));
                 eletronico.setConectividade(ler.EntDados("Conectividade (online/Local): "));
                 System.out.println(
                         "=========================\n Dados do Jogo Eletronico \n=========================");
@@ -77,7 +76,7 @@ public class Principal {
                 System.out.println("Valor: R$" + eletronico.getValor());
                 System.out.println("Quantidade de jogadores: " + eletronico.getQntPlayers());
                 System.out.println("Plataforma: " + eletronico.getPlataforma());
-                System.out.println("Avaliação: " + eletronico.getAvaliação());
+                System.out.println("Avaliação: " + eletronico.getAvaliacao());
                 System.out.println("Conectividade (online/Local): " + eletronico.getConectividade());
                 break;
             default:
