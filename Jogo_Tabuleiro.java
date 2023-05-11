@@ -35,8 +35,13 @@ public class Jogo_Tabuleiro extends Jogo implements Calc_lucroInterface {
         this.qntdados = qntdados;
     }
 
-    public void setManualRegras(String manualRegras) {
-        this.ManualRegras = manualRegras;
+    public void setManualRegras(String manualRegras) throws Excecoes {
+        if((ManualRegras == "S" || ManualRegras == "s" || ManualRegras == "n" || ManualRegras == "N")){
+            throw new Excecoes();
+        }
+        else {
+            this.ManualRegras = manualRegras;
+        }
     }
 
     public String getManualRegras() {

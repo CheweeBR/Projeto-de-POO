@@ -48,10 +48,11 @@ public abstract class Jogo {
     }
 
     public void setQntPlayers(int qntPlayers) throws Excecoes {
-        if(valor <= 0) {
+        if(qntPlayers <= 0) {
             throw new Excecoes();
+        } else {
+            this.QntPlayers = qntPlayers;
         }
-        this.QntPlayers = qntPlayers;
     }
 
     public String getNome() {

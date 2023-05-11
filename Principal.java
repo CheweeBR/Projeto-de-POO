@@ -47,7 +47,14 @@ public class Principal {
                         e.qtd_min_jogadores();
                     }
                 }
-                cartas.setMaterial(ler.EntDados("Material (plastico/papelão/resina): "));
+                while (c == true) {
+                    try {
+                        cartas.setMaterial(ler.EntDados("Material (plastico/papelao): "));
+                        c = false;
+                    } catch (Excecoes e) {
+                        e.nome_vazio();
+                    }
+                }
                 cartas.setQntBaralho(Integer.parseInt(ler.EntDados("Quantidade de Baralho: ")));
                 cartas.setQntCartas(Integer.parseInt(ler.EntDados("Quantidade de cartas: ")));
                 System.out.println("=========================\n Dados do Jogo de cartas \n=========================");
@@ -93,7 +100,15 @@ public class Principal {
                         e.qtd_min_jogadores();
                     }
                 }
-                tabuleiro.setManualRegras(ler.EntDados("Possui manual: "));
+                while (c == true) {
+                    try {
+                        tabuleiro.setManualRegras(ler.EntDados("Possui manual (s/n): "));
+                        c = false;
+                    } catch (Excecoes e) {
+                        e.restricao_manual();
+                    }
+                }
+                tabuleiro.setQntdados(Integer.parseInt(ler.EntDados("Quantidade de dados: ")));
                 tabuleiro.setQntpecas(Integer.parseInt(ler.EntDados("Quantidade de pecas: ")));
                 System.out.println(
                         "========================\n Dados do Jogo de tabuleiro \n========================");

@@ -10,4 +10,10 @@ public class Excecoes extends Exception {
     public void qtd_min_jogadores(){
         System.out.println("A quantidade de jogadores deve ser maior que 0.");
     }
+    public void restricao_material() {
+        System.out.println("Os materiais devem estar dentro das alternativas (Plastico/Papelao).");
+    }
+    public void restricao_manual(){
+        System.out.println("A resposta obrigatoriamente deve ser Sim (S) ou Nao (N).");
+    }
 }
