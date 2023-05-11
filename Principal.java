@@ -26,6 +26,7 @@ public class Principal {
                 while (c == false) {
                     try {
                         cartas.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                        eletronico.adicionar_lucro();
                         c = true;
                     } catch (Excecoes e) {
                         e.valor_invalido();
@@ -58,6 +59,7 @@ public class Principal {
                 while (c == false) {
                     try {
                         tabuleiro.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                        tabuleiro.adicionar_lucro();
                         c = true;
                     } catch (Excecoes e) {
                         e.valor_invalido();
@@ -90,12 +92,12 @@ public class Principal {
                 while (c == false) {
                     try {
                         eletronico.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                        eletronico.adicionar_lucro();
                         c = true;
                     } catch (Excecoes e) {
                         e.valor_invalido();
                     }
                 }
-                eletronico.adicionar_lucro();
                 eletronico.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 eletronico.setPlataforma(ler.EntDados("Plataforma: "));
                 eletronico.setAvaliacao(Float.parseFloat(ler.EntDados("Avaliacao: ")));
