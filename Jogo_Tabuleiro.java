@@ -5,8 +5,7 @@ public class Jogo_Tabuleiro extends Jogo implements Calc_lucroInterface {
     private int qntpecas;
     private int qntdados;
 
-    public Jogo_Tabuleiro(String nome, String marca, Float valor, int qntPlayers, int qntpecas, int qntdados,
-            String ManualRegras) {
+    public Jogo_Tabuleiro(String nome, String marca, Float valor, int qntPlayers, int qntpecas, int qntdados,String ManualRegras) {
         super(nome, marca, valor, qntPlayers);
         this.qntpecas = qntpecas;
         this.qntdados = qntdados;
