@@ -22,17 +22,31 @@ public class Principal {
                         e.nome_vazio();
                     }
                 }
-                cartas.setMarca(ler.EntDados("Marca: "));
                 while (c == false) {
                     try {
-                        cartas.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
-                        eletronico.adicionar_lucro();
+                        cartas.setMarca(ler.EntDados("Marca: "));;
                         c = true;
+                    } catch (Excecoes e) {
+                        e.nome_vazio();
+                    }
+                }
+                while (c == true) {
+                    try {
+                        cartas.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                        cartas.adicionar_lucro();
+                        c = false;
                     } catch (Excecoes e) {
                         e.valor_invalido();
                     }
                 }
-                cartas.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
+                while (c == false) {
+                    try {
+                        cartas.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));;
+                        c = true;
+                    } catch (Excecoes e) {
+                        e.qtd_min_jogadores();
+                    }
+                }
                 cartas.setMaterial(ler.EntDados("Material (plastico/papelão/resina): "));
                 cartas.setQntBaralho(Integer.parseInt(ler.EntDados("Quantidade de Baralho: ")));
                 cartas.setQntCartas(Integer.parseInt(ler.EntDados("Quantidade de cartas: ")));
@@ -54,17 +68,31 @@ public class Principal {
                         e.nome_vazio();
                     }
                 }
-                tabuleiro.setMarca(ler.EntDados("Marca: "));
                 while (c == false) {
+                    try {
+                        tabuleiro.setMarca(ler.EntDados("Marca: "));;
+                        c = true;
+                    } catch (Excecoes e) {
+                        e.nome_vazio();
+                    }
+                }
+                while (c == true) {
                     try {
                         tabuleiro.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
                         tabuleiro.adicionar_lucro();
-                        c = true;
+                        c = false;
                     } catch (Excecoes e) {
                         e.valor_invalido();
                     }
                 }
-                tabuleiro.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
+                while (c == false) {
+                    try {
+                        tabuleiro.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));;
+                        c = true;
+                    } catch (Excecoes e) {
+                        e.qtd_min_jogadores();
+                    }
+                }
                 tabuleiro.setManualRegras(ler.EntDados("Possui manual: "));
                 tabuleiro.setQntpecas(Integer.parseInt(ler.EntDados("Quantidade de pecas: ")));
                 System.out.println(
@@ -86,17 +114,31 @@ public class Principal {
                         e.nome_vazio();
                     }
                 }
-                eletronico.setMarca(ler.EntDados("Marca: "));
                 while (c == false) {
+                    try {
+                        eletronico.setMarca(ler.EntDados("Marca: "));;
+                        c = true;
+                    } catch (Excecoes e) {
+                        e.nome_vazio();
+                    }
+                }
+                while (c == true) {
                     try {
                         eletronico.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
                         eletronico.adicionar_lucro();
-                        c = true;
+                        c = false;
                     } catch (Excecoes e) {
                         e.valor_invalido();
                     }
                 }
-                eletronico.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
+                while (c == false) {
+                    try {
+                        eletronico.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));;
+                        c = true;
+                    } catch (Excecoes e) {
+                        e.qtd_min_jogadores();
+                    }
+                }
                 eletronico.setPlataforma(ler.EntDados("Plataforma: "));
                 eletronico.setAvaliacao(Float.parseFloat(ler.EntDados("Avaliacao: ")));
                 eletronico.setConectividade(ler.EntDados("Conectividade (online/Local): "));

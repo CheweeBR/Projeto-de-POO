@@ -7,4 +7,7 @@ public class Excecoes extends Exception {
     public void valor_invalido(){
         System.out.println("O valor do produto deve ser maior que R$00.00");
     }
+    public void qtd_min_jogadores(){
+        System.out.println("A quantidade de jogadores deve ser maior que 0.");
+    }
 }

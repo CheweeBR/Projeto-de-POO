@@ -24,8 +24,12 @@ public abstract class Jogo {
         return marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setMarca(String marca) throws Excecoes {
+        if (marca.isEmpty()) {
+            throw new Excecoes();
+        } else {
+            this.marca = marca;
+        }
     }
 
     public Float getValor() {
@@ -43,8 +47,11 @@ public abstract class Jogo {
         return QntPlayers;
     }
 
-    public void setQntPlayers(int qntPlayers) {
-        QntPlayers = qntPlayers;
+    public void setQntPlayers(int qntPlayers) throws Excecoes {
+        if(valor <= 0) {
+            throw new Excecoes();
+        }
+        this.QntPlayers = qntPlayers;
     }
 
     public String getNome() {
