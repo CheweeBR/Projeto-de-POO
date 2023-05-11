@@ -46,6 +46,10 @@ public class Jogo_Cartas extends Jogo implements Calc_lucroInterface {
     // Polimorfismo por sobreescrita, cada classe tem uma % de lucro diferente.
     @Override
     public void adicionar_lucro() {
-        setValor(getValor() * 1.5f);
+        try {
+            setValor(getValor() * 1.5f);
+        } catch (Excecoes e) {
+            e.valor_invalido();
+        }
     }
 }

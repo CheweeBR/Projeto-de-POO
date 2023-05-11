@@ -3,6 +3,7 @@
 public class Principal {
     public static void main(String arg[]) {
         int alt = 0;
+        Boolean c = true;
         Leitura ler = new Leitura();
         Jogo_Cartas cartas = new Jogo_Cartas();
         Jogo_Tabuleiro tabuleiro = new Jogo_Tabuleiro();
@@ -13,13 +14,23 @@ public class Principal {
         System.out.println("==================");
         switch (alt) {
             case 1:
-                try {
-                    cartas.setNome(ler.EntDados("Nome: "));
-                } catch (Excecoes e) {
-                    e.nome_vazio();
+                while (c == true) {
+                    try {
+                        cartas.setNome(ler.EntDados("Nome: "));
+                        c = false;
+                    } catch (Excecoes e) {
+                        e.nome_vazio();
+                    }
                 }
                 cartas.setMarca(ler.EntDados("Marca: "));
-                cartas.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                while (c == false) {
+                    try {
+                        cartas.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                        c = true;
+                    } catch (Excecoes e) {
+                        e.valor_invalido();
+                    }
+                }
                 cartas.adicionar_lucro();
                 cartas.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 cartas.setMaterial(ler.EntDados("Material (plastico/papelão/resina): "));
@@ -35,13 +46,23 @@ public class Principal {
                 System.out.println("Quantidade de cartas: " + cartas.getQntCartas());
                 break;
             case 2:
-                try {
-                    tabuleiro.setNome(ler.EntDados("Nome: "));
-                } catch (Excecoes e) {
-                    e.nome_vazio();
+                while (c == true) {
+                    try {
+                        tabuleiro.setNome(ler.EntDados("Nome: "));
+                        c = false;
+                    } catch (Excecoes e) {
+                        e.nome_vazio();
+                    }
                 }
                 tabuleiro.setMarca(ler.EntDados("Marca: "));
-                tabuleiro.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                while (c == false) {
+                    try {
+                        tabuleiro.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                        c = true;
+                    } catch (Excecoes e) {
+                        e.valor_invalido();
+                    }
+                }
                 tabuleiro.adicionar_lucro();
                 tabuleiro.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 tabuleiro.setManualRegras(ler.EntDados("Possui manual: "));
@@ -57,13 +78,23 @@ public class Principal {
                 System.out.println("Quantidade de pecas: " + tabuleiro.getQntpecas());
                 break;
             case 3:
-                try {
-                    eletronico.setNome(ler.EntDados("Nome: "));
-                } catch (Excecoes e) {
-                    e.nome_vazio();
+                while (c == true) {
+                    try {
+                        eletronico.setNome(ler.EntDados("Nome: "));
+                        c = false;
+                    } catch (Excecoes e) {
+                        e.nome_vazio();
+                    }
                 }
                 eletronico.setMarca(ler.EntDados("Marca: "));
-                eletronico.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                while (c == false) {
+                    try {
+                        eletronico.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
+                        c = true;
+                    } catch (Excecoes e) {
+                        e.valor_invalido();
+                    }
+                }
                 eletronico.adicionar_lucro();
                 eletronico.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 eletronico.setPlataforma(ler.EntDados("Plataforma: "));

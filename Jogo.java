@@ -32,7 +32,10 @@ public abstract class Jogo {
         return valor;
     }
 
-    public void setValor(Float valor) {
+    public void setValor(Float valor) throws Excecoes{
+        if(valor <= 0) {
+            throw new Excecoes();
+        }
         this.valor = valor;
     }
 
