@@ -1,6 +1,6 @@
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
-public class Jogo_Tabuleiro extends Jogo {
+public class Jogo_Tabuleiro extends Jogo implements Calc_lucroInterface {
     private String ManualRegras;
     private int qntpecas;
     private int qntdados;
@@ -44,6 +44,7 @@ public class Jogo_Tabuleiro extends Jogo {
     }
 
     // Polimorfismo por sobreescrita, cada classe tem uma % de lucro diferente.
+    @Override
     public void adicionar_lucro() {
         setValor(getValor() * 2.5f);
     }

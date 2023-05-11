@@ -1,6 +1,6 @@
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
-public class Jogo_Eletronico extends Jogo implements Interface {
+public class Jogo_Eletronico extends Jogo implements Calc_lucroInterface {
     private String plataforma;
     private String conectividade;
     private float avaliacao;
@@ -45,11 +45,8 @@ public class Jogo_Eletronico extends Jogo implements Interface {
     }
 
     // Polimorfismo por sobreescrita, cada classe tem uma % de lucro diferente.
+    @Override
     public void adicionar_lucro() {
         setValor(getValor() * 1.75f);
-    }
-
-    public void valor_em_dolar() {
-        setValor(getValor() / Interface.dolar);
     }
 }
