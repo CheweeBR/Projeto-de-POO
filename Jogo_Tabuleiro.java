@@ -35,11 +35,11 @@ public class Jogo_Tabuleiro extends Jogo implements Calc_lucroInterface {
     }
 
     public void setManualRegras(String manualRegras) throws Excecoes {
-        if((ManualRegras == "S" || ManualRegras == "s" || ManualRegras == "n" || ManualRegras == "N")){
-            throw new Excecoes();
+        if(manualRegras == "s"){
+            this.ManualRegras = manualRegras;
         }
         else {
-            this.ManualRegras = manualRegras;
+            throw new Excecoes();
         }
     }
 
