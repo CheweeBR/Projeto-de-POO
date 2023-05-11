@@ -157,8 +157,7 @@ public class Principal {
                 eletronico.setPlataforma(ler.EntDados("Plataforma: "));
                 eletronico.setAvaliacao(Float.parseFloat(ler.EntDados("Avaliacao: ")));
                 eletronico.setConectividade(ler.EntDados("Conectividade (online/Local): "));
-                System.out.println(
-                        "=========================\n Dados do Jogo Eletronico \n=========================");
+                System.out.println("=========================\n Dados do Jogo Eletronico \n=========================");
                 System.out.println("Nome: " + eletronico.getNome());
                 System.out.println("Marca: " + eletronico.getMarca());
                 System.out.println("Valor: R$" + eletronico.getValor());
