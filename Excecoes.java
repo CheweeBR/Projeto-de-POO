@@ -1,3 +1,5 @@
+// Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
+
 public class Excecoes extends Exception {
     public void nome_vazio() {
         Leitura ler = new Leitura();
