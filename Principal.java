@@ -32,7 +32,6 @@ public class Principal {
                         e.valor_invalido();
                     }
                 }
-                cartas.adicionar_lucro();
                 cartas.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 cartas.setMaterial(ler.EntDados("Material (plastico/papelão/resina): "));
                 cartas.setQntBaralho(Integer.parseInt(ler.EntDados("Quantidade de Baralho: ")));
@@ -65,7 +64,6 @@ public class Principal {
                         e.valor_invalido();
                     }
                 }
-                tabuleiro.adicionar_lucro();
                 tabuleiro.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
                 tabuleiro.setManualRegras(ler.EntDados("Possui manual: "));
                 tabuleiro.setQntpecas(Integer.parseInt(ler.EntDados("Quantidade de pecas: ")));
