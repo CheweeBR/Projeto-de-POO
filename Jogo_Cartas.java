@@ -5,6 +5,7 @@ public class Jogo_Cartas extends Jogo implements Calc_lucroInterface {
     private int qntBaralho;
     private int qntCartas;
 
+    // Polimorfismo por sobrecarga
     public Jogo_Cartas() {
         material = "";
         qntBaralho = 0;

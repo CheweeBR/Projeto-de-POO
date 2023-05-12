@@ -6,6 +6,7 @@ public abstract class Jogo {
     private float valor;
     private int QntPlayers;
 
+    // Polimorfismo por sobrecarga
     public Jogo() {
         this.nome = "";
         this.marca = "";

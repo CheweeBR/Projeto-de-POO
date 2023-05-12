@@ -77,7 +77,7 @@ public class Principal {
                 }
                 while (c == false) {
                     try {
-                        tabuleiro.setMarca(ler.EntDados("Marca: "));;
+                        tabuleiro.setMarca(ler.EntDados("Marca: "));
                         c = true;
                     } catch (Excecoes e) {
                         e.nome_vazio();
