@@ -4,10 +4,11 @@ public class Jogo_Tabuleiro extends Jogo implements Calc_lucroInterface {
     private String ManualRegras;
     private int qntpecas;
     private int qntdados;
-    
+
     // Polimorfismo por sobrecarga
-    public Jogo_Tabuleiro(String nome, String marca, Float valor, int qntPlayers, int qntpecas, int qntdados,String ManualRegras) {
-        super(nome, marca, valor, qntPlayers);
+    public Jogo_Tabuleiro(int id, String nome, String marca, Float valor, int qntPlayers, int qntpecas, int qntdados,
+            String ManualRegras) {
+        super(id, nome, marca, valor, qntPlayers);
         this.qntpecas = qntpecas;
         this.qntdados = qntdados;
         this.ManualRegras = ManualRegras;
@@ -36,10 +37,10 @@ public class Jogo_Tabuleiro extends Jogo implements Calc_lucroInterface {
     }
 
     public void setManualRegras(String manualRegras) throws Excecoes {
-        if(manualRegras.equals("s") || manualRegras.equals("S") || manualRegras.equals("N") || manualRegras.equals("n")){
+        if (manualRegras.equals("s") || manualRegras.equals("S") || manualRegras.equals("N")
+                || manualRegras.equals("n")) {
             this.ManualRegras = manualRegras;
-        }
-        else {
+        } else {
             throw new Excecoes();
         }
     }

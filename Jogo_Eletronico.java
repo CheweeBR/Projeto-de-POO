@@ -5,10 +5,10 @@ public class Jogo_Eletronico extends Jogo implements Calc_lucroInterface {
     private String conectividade;
     private float avaliacao;
 
-    public Jogo_Eletronico(String nome, String marca, Float valor, int qntPlayers, String plataforma,
+    public Jogo_Eletronico(int id, String nome, String marca, Float valor, int qntPlayers, String plataforma,
             String conectividade,
             float avaliacao) {
-        super(nome, marca, valor, qntPlayers);
+        super(id, nome, marca, valor, qntPlayers);
         this.plataforma = plataforma;
         this.conectividade = conectividade;
         this.avaliacao = avaliacao;

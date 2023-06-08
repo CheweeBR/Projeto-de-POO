@@ -8,63 +8,21 @@ public class Principal {
         Jogo_Cartas cartas = new Jogo_Cartas();
         Jogo_Tabuleiro tabuleiro = new Jogo_Tabuleiro();
         Jogo_Eletronico eletronico = new Jogo_Eletronico();
+        BancoDeDados_Jogos bdJogos = new BancoDeDados_Jogos();
         System.out.println("==================\n Tipos de Jogos  \n==================");
         System.out.println(" [1] Cartas\n [2] Tabuleiro\n [3] Eletronico  \n==================");
         alt = Integer.parseInt(ler.EntDados("Alternativa: "));
         System.out.println("==================");
         switch (alt) {
             case 1:
-                while (c == true) {
-                    try {
-                        cartas.setNome(ler.EntDados("Nome: "));
-                        c = false;
-                    } catch (Excecoes e) {
-                        e.nome_vazio();
-                    }
+                bdJogos.Cadastrar(cartas);
+                while (alt == 1) {
+                    bdJogos.Consultar(cartas);
+                    bdJogos.Listar(cartas);
+                    bdJogos.Alterar(cartas);
+                    bdJogos.Deletar(cartas);
+                    bdJogos.Listar(cartas);
                 }
-                while (c == false) {
-                    try {
-                        cartas.setMarca(ler.EntDados("Marca: "));;
-                        c = true;
-                    } catch (Excecoes e) {
-                        e.nome_vazio();
-                    }
-                }
-                while (c == true) {
-                    try {
-                        cartas.setValor(Float.parseFloat(ler.EntDados("Valor: ")));
-                        cartas.adicionar_lucro();
-                        c = false;
-                    } catch (Excecoes e) {
-                        e.valor_invalido();
-                    }
-                }
-                while (c == false) {
-                    try {
-                        cartas.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));;
-                        c = true;
-                    } catch (Excecoes e) {
-                        e.qtd_min_jogadores();
-                    }
-                }
-                while (c == true) {
-                    try {
-                        cartas.setMaterial(ler.EntDados("Material (plastico/papelao): "));
-                        c = false;
-                    } catch (Excecoes e) {
-                        e.nome_vazio();
-                    }
-                }
-                cartas.setQntBaralho(Integer.parseInt(ler.EntDados("Quantidade de Baralho: ")));
-                cartas.setQntCartas(Integer.parseInt(ler.EntDados("Quantidade de cartas: ")));
-                System.out.println("=========================\n Dados do Jogo de cartas \n=========================");
-                System.out.println("Nome: " + cartas.getNome());
-                System.out.println("Marca: " + cartas.getMarca());
-                System.out.println("Valor: R$" + cartas.getValor());
-                System.out.println("Quantidade de jogadores: " + cartas.getQntPlayers());
-                System.out.println("Material: " + cartas.getMaterial());
-                System.out.println("Quantidade de Baralho: " + cartas.getQntBaralho());
-                System.out.println("Quantidade de cartas: " + cartas.getQntCartas());
                 break;
             case 2:
                 while (c == true) {
@@ -94,7 +52,8 @@ public class Principal {
                 }
                 while (c == false) {
                     try {
-                        tabuleiro.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));;
+                        tabuleiro.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
+                        ;
                         c = true;
                     } catch (Excecoes e) {
                         e.qtd_min_jogadores();
@@ -131,7 +90,8 @@ public class Principal {
                 }
                 while (c == false) {
                     try {
-                        eletronico.setMarca(ler.EntDados("Marca: "));;
+                        eletronico.setMarca(ler.EntDados("Marca: "));
+                        ;
                         c = true;
                     } catch (Excecoes e) {
                         e.nome_vazio();
@@ -148,7 +108,8 @@ public class Principal {
                 }
                 while (c == false) {
                     try {
-                        eletronico.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));;
+                        eletronico.setQntPlayers(Integer.parseInt(ler.EntDados("Quantidade de jogadores: ")));
+                        ;
                         c = true;
                     } catch (Excecoes e) {
                         e.qtd_min_jogadores();

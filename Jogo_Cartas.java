@@ -12,8 +12,9 @@ public class Jogo_Cartas extends Jogo implements Calc_lucroInterface {
         qntCartas = 0;
     }
 
-    public Jogo_Cartas(String nome, String marca, Float valor, int qntPlayers, String material, int qntBaralho,int qntCartas) {
-        super(nome, marca, valor, qntPlayers);
+    public Jogo_Cartas(int id, String nome, String marca, Float valor, int qntPlayers, String material, int qntBaralho,
+            int qntCartas) {
+        super(id, nome, marca, valor, qntPlayers);
         this.material = material;
         this.qntBaralho = qntBaralho;
         this.qntCartas = qntCartas;
@@ -24,10 +25,9 @@ public class Jogo_Cartas extends Jogo implements Calc_lucroInterface {
     }
 
     public void setMaterial(String material) throws Excecoes {
-        if(material.isEmpty()){
+        if (material.isEmpty()) {
             throw new Excecoes();
-        }
-        else {
+        } else {
             this.material = material;
         }
     }

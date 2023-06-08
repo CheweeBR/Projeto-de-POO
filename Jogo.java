@@ -1,6 +1,7 @@
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
 public abstract class Jogo {
+    private int id;
     private String nome;
     private String marca;
     private float valor;
@@ -8,17 +9,27 @@ public abstract class Jogo {
 
     // Polimorfismo por sobrecarga
     public Jogo() {
+        this.id = 0;
         this.nome = "";
         this.marca = "";
         this.valor = 0.00f;
         QntPlayers = 1;
     }
 
-    public Jogo(String nome, String marca, Float valor, int qntPlayers) {
+    public Jogo(int id, String nome, String marca, Float valor, int qntPlayers) {
+        this.id = id;
         this.nome = nome;
         this.marca = marca;
         this.valor = valor;
         QntPlayers = qntPlayers;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMarca() {
@@ -37,8 +48,8 @@ public abstract class Jogo {
         return valor;
     }
 
-    public void setValor(Float valor) throws Excecoes{
-        if(valor <= 0) {
+    public void setValor(float valor) throws Excecoes {
+        if (valor <= 0) {
             throw new Excecoes();
         }
         this.valor = valor;
@@ -49,7 +60,7 @@ public abstract class Jogo {
     }
 
     public void setQntPlayers(int qntPlayers) throws Excecoes {
-        if(qntPlayers <= 0) {
+        if (qntPlayers <= 0) {
             throw new Excecoes();
         } else {
             this.QntPlayers = qntPlayers;
