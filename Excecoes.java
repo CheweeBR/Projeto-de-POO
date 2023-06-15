@@ -1,19 +1,33 @@
+package com.mycompany.projeto_gerenciar_jogos_tiagoeloypossidonio;
+
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
+import java.awt.Component;
+import javax.swing.JOptionPane;
+
+
 public class Excecoes extends Exception {
-    public void nome_vazio() {
-        System.out.println("O campo esta vazio e deve ser preenchido!");
+    private Component rootPane;
+    
+    public void ID_vazio(){
+    JOptionPane.showMessageDialog(rootPane, "O campo 'ID' está vazio!");
+    }
+    public void nome_vazio(){
+    JOptionPane.showMessageDialog(rootPane, "O campo 'Nome' está vazio!");
+    }
+    public void Marca_vazio(){
+    JOptionPane.showMessageDialog(rootPane, "O campo 'Marca' está vazio!");
     }
     public void valor_invalido(){
-        System.out.println("O valor do produto deve ser maior que R$00.00");
+        JOptionPane.showMessageDialog(rootPane, "O valor do produto deve ser maior que R$00.00");
     }
     public void qtd_min_jogadores(){
-        System.out.println("A quantidade de jogadores deve ser maior que 0.");
+        JOptionPane.showMessageDialog(rootPane, "A quantidade de jogadores deve ser maior que 0.");
     }
     public void restricao_material() {
-        System.out.println("Os materiais devem estar dentro das alternativas (Plastico/Papelao).");
+        JOptionPane.showMessageDialog(rootPane, "Os materiais devem estar dentro das alternativas (Plastico/Papelao).");
     }
     public void restricao_manual(){
-        System.out.println("A resposta obrigatoriamente deve ser Sim (S) ou Nao (N).");
+        JOptionPane.showMessageDialog(rootPane, "A resposta obrigatoriamente deve ser Sim ou Não.");
     }
 }

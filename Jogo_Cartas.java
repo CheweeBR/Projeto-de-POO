@@ -1,3 +1,5 @@
+package com.mycompany.projeto_gerenciar_jogos_tiagoeloypossidonio;
+
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
 public class Jogo_Cartas extends Jogo implements Calc_lucroInterface {
@@ -36,16 +38,27 @@ public class Jogo_Cartas extends Jogo implements Calc_lucroInterface {
         return qntBaralho;
     }
 
-    public void setQntBaralho(int qntBaralho) {
-        this.qntBaralho = qntBaralho;
+    public void setQntBaralho(int qntBaralho) throws Excecoes {
+        if (qntBaralho <= 0) {
+            throw new Excecoes();
+        }
+        else {
+            this.qntBaralho = qntBaralho;            
+        }
+
     }
 
     public int getQntCartas() {
         return qntCartas;
     }
 
-    public void setQntCartas(int qntCartas) {
-        this.qntCartas = qntCartas;
+    public void setQntCartas(int qntCartas) throws Excecoes {
+        if (qntCartas <= 0 ){
+            throw new Excecoes();
+        }
+        else{
+            this.qntCartas = qntCartas;
+        }
     }
 
     // Polimorfismo por sobreescrita, cada classe tem uma % de lucro diferente.
