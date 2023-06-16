@@ -1,5 +1,3 @@
-package com.mycompany.projeto_gerenciar_jogos_tiagoeloypossidonio;
-
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
 public class Jogo_Tabuleiro extends Jogo implements Calc_lucroInterface {
@@ -26,21 +24,30 @@ public class Jogo_Tabuleiro extends Jogo implements Calc_lucroInterface {
         return qntpecas;
     }
 
-    public void setQntpecas(int qntpecas) {
-        this.qntpecas = qntpecas;
+    public void setQntpecas(int qntpecas)  throws Excecoes {
+        if (qntpecas < 0) {
+            throw new Excecoes();
+        }
+        else {
+            this.qntpecas = qntpecas;            
+        }
     }
 
     public int getQntdados() {
         return qntdados;
     }
 
-    public void setQntdados(int qntdados) {
-        this.qntdados = qntdados;
+    public void setQntdados(int qntdados) throws Excecoes {
+        if (qntdados < 0) {
+            throw new Excecoes();
+        }
+        else {
+            this.qntdados = qntdados;            
+        }
     }
 
     public void setManualRegras(String manualRegras) throws Excecoes {
-        if (manualRegras.equals("s") || manualRegras.equals("S") || manualRegras.equals("N")
-                || manualRegras.equals("n")) {
+        if (manualRegras.equals("Não") || manualRegras.equals("NÃO") || manualRegras.equals("Nao") || manualRegras.equals("nao") || manualRegras.equals("não") || manualRegras.equals("sim") || manualRegras.equals("Sim") || manualRegras.equals("SIM")) {
             this.ManualRegras = manualRegras;
         } else {
             throw new Excecoes();

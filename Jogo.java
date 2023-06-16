@@ -1,4 +1,4 @@
-package com.mycompany.projeto_gerenciar_jogos_tiagoeloypossidonio;
+
 
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
@@ -30,7 +30,10 @@ public abstract class Jogo {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id) throws Excecoes {
+        if(Integer.toString(id).isEmpty()) {
+            throw new Excecoes();
+        }
         this.id = id;
     }
 

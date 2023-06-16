@@ -1,23 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package com.mycompany.projeto_gerenciar_jogos_tiagoeloypossidonio;
+// Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
-/**
- *
- * @author Tiago Eloy
- */
+import javax.swing.JOptionPane;
+
 public class Administrar_Tabuleiro extends javax.swing.JFrame {
 
-    private final BancoDeDados_Jogos bdTabuleiro = new BancoDeDados_Jogos();
-    private final Jogo_Cartas tabuleiro = new Jogo_Cartas();
+    private BancoDeDados_Jogos bdTabuleiro = BancoDeDados_Jogos.getInstance();
+    private Jogo_Tabuleiro tabuleiro = new Jogo_Tabuleiro();
     private boolean verificador = true;
+    private static Administrar_Tabuleiro instancia;
     
-    public Administrar_Tabuleiro() {
+    private Administrar_Tabuleiro() {
         initComponents();
     }
 
+    public static Administrar_Tabuleiro getAdministrar_Tabuleiro() {
+        if(instancia == null) {
+            instancia = new Administrar_Tabuleiro(); 
+        }
+        return instancia;
+    }    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -210,6 +211,11 @@ public class Administrar_Tabuleiro extends javax.swing.JFrame {
 
         jButtonAlterar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButtonAlterar.setText("Alterar");
+        jButtonAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAlterarActionPerformed(evt);
+            }
+        });
 
         jButtonDeletar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButtonDeletar.setText("Deletar");
@@ -265,19 +271,149 @@ public class Administrar_Tabuleiro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
-
+        Consultar(tabuleiro);
     }//GEN-LAST:event_jButtonConsultarActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
-
+        Cadastrar();
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jButtonDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletarActionPerformed
-        // TODO add your handling code here:
+        Deletar();
     }//GEN-LAST:event_jButtonDeletarActionPerformed
 
+    private void jButtonAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarActionPerformed
+        Alterar();
+    }//GEN-LAST:event_jButtonAlterarActionPerformed
+ public void Cadastrar(){
+        verificador = true;
+        while (verificador==true) {
+            try {
+                tabuleiro.setId(Integer.parseInt(jTextField_ID.getText()));
+            }
+            catch (Excecoes e) {
+                e.ID_vazio();
+                break;
+            }
+            try {
+                tabuleiro.setNome(jTextField_Nome.getText());
+            }
+            catch (Excecoes e) {
+                e.ID_vazio();
+                break;
+            }
+            try {
+                tabuleiro.setQntpecas(Integer.parseInt(jTextField_QtdPecas.getText()));
+            } catch(Excecoes e) {
+                e.qtd_Pecas();
+                break;
+            }     
+            try {
+                tabuleiro.setMarca(jTextField_Marca.getText());
+            } catch (Excecoes e) {
+                e.Marca_vazio();
+                break;
+            } 
+            try {
+                tabuleiro.setQntdados(Integer.parseInt(jTextField_QtdDados.getText()));
+            } catch(Excecoes e){
+                 e.qtd_Dados();
+                 break;
+            }
+            try {
+                tabuleiro.setManualRegras(jTextField_Manual.getText());
+            } catch (Excecoes e) {
+                e.restricao_manual();
+                break;
+            }
+            try {
+                tabuleiro.setQntPlayers(Integer.parseInt(jTextField_QtdJogadores.getText()));
+
+            } catch (Excecoes e) {
+                e.qtd_min_jogadores();
+                break;
+            }
+            try {
+                tabuleiro.setValor(Float.parseFloat(jTextField_valor.getText()));
+                tabuleiro.adicionar_lucro();
+            } catch (Excecoes e) {
+                e.valor_invalido();
+                break;
+            }
+            tabuleiro = bdTabuleiro.Cadastrar(tabuleiro);
+            if(tabuleiro != null) {
+                JOptionPane.showMessageDialog(rootPane, "Cadastro realizado com sucesso!");
+                Limpar();
+            }
+            else {
+                JOptionPane.showMessageDialog(rootPane, "Já possuí um item cadastrado com esse ID!");
+                Limpar();
+            }
+            verificador = false;
+        }
+    }
+    
+    public void Consultar(Jogo_Tabuleiro tabuleiro){
+        try {
+            tabuleiro.setId(Integer.parseInt(jTextField_ID.getText()));
+            tabuleiro = bdTabuleiro.Consultar(tabuleiro);
+            if(tabuleiro != null) {
+            jTextField_ID.setText(Integer.toString(tabuleiro.getId()));
+            jTextField_Marca.setText(tabuleiro.getMarca());
+            jTextField_QtdPecas.setText(Integer.toString(tabuleiro.getQntpecas()));
+            jTextField_Nome.setText(tabuleiro.getNome());
+            jTextField_QtdDados.setText(Integer.toString(tabuleiro.getQntdados()));
+            jTextField_Manual.setText(String.valueOf(tabuleiro.getManualRegras()));
+            jTextField_QtdJogadores.setText(Integer.toString(tabuleiro.getQntPlayers()));
+            jTextField_valor.setText(String.valueOf(tabuleiro.getValor()));
+            JOptionPane.showConfirmDialog(rootPane, "Os dados estão corretos?");
+            Limpar();
+            }      
+            else {
+                JOptionPane.showMessageDialog(null, "Não há nenhum item cadastrado com esse ID.", "Verifique se digitou corretamente.", 0 );
+        }
+        
+    }
+        catch (Excecoes NumberFormatExeption) {
+            JOptionPane.showConfirmDialog(rootPane, "O ID deve ser um número inteiro.");
+        }
+    }
+
+    public void Alterar(){
+        try {
+            tabuleiro.setId(Integer.parseInt(jTextField_ID.getText()));
+            tabuleiro.setNome(jTextField_Nome.getText());
+            tabuleiro.setQntpecas(Integer.parseInt(jTextField_QtdPecas.getText()));
+            tabuleiro.setMarca(jTextField_Marca.getText());
+            tabuleiro.setQntdados(Integer.parseInt(jTextField_QtdDados.getText()));
+            tabuleiro.setManualRegras(jTextField_Manual.getText());
+            tabuleiro.setQntPlayers(Integer.parseInt(jTextField_QtdJogadores.getText()));
+            tabuleiro.setValor(Float.parseFloat(jTextField_valor.getText()));
+        } catch (Excecoes e) {
+            
+        }       
+        tabuleiro = bdTabuleiro.Alterar(tabuleiro);
+        if (tabuleiro != null) {
+            JOptionPane.showConfirmDialog(rootPane, "Item atualizado!");
+        }
+        else {
+            JOptionPane.showConfirmDialog(rootPane, "Erro para atualizado!");
+        }
+        Limpar();
+    }
+    
+    public void Deletar() {
+        tabuleiro = bdTabuleiro.Deletar(tabuleiro);
+        if(tabuleiro != null) {
+            JOptionPane.showConfirmDialog(rootPane, "Item removido!");
+        } else {
+            JOptionPane.showConfirmDialog(rootPane, "Item não removido!");
+        }
+        Limpar();
+    }
+    
     public void Limpar(){
-        jTextField_ID.setText(Integer.toString(bdTabuleiro.Verifica_ID(tabuleiro)));
+        jTextField_ID.setText(null);
         jTextField_Marca.setText(null);
         jTextField_Manual.setText(null);
         jTextField_Nome.setText(null);
@@ -285,11 +421,6 @@ public class Administrar_Tabuleiro extends javax.swing.JFrame {
         jTextField_QtdPecas.setText(null);
         jTextField_QtdJogadores.setText(null);
         jTextField_valor.setText(null);
-    }
-    
-    public void Padrao(){
-        Limpar();
-        jTextField_Nome.requestFocus();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

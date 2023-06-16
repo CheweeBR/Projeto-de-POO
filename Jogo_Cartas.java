@@ -1,5 +1,3 @@
-package com.mycompany.projeto_gerenciar_jogos_tiagoeloypossidonio;
-
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
 public class Jogo_Cartas extends Jogo implements Calc_lucroInterface {
@@ -45,7 +43,6 @@ public class Jogo_Cartas extends Jogo implements Calc_lucroInterface {
         else {
             this.qntBaralho = qntBaralho;            
         }
-
     }
 
     public int getQntCartas() {

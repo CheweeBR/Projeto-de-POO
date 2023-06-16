@@ -1,5 +1,3 @@
-package com.mycompany.projeto_gerenciar_jogos_tiagoeloypossidonio;
-
 // Nome: Tiago Eloy Possidonio Pereira - RA: 2417677
 
 public class Jogo_Eletronico extends Jogo implements Calc_lucroInterface {
@@ -26,24 +24,36 @@ public class Jogo_Eletronico extends Jogo implements Calc_lucroInterface {
         return conectividade;
     }
 
-    public void setConectividade(String conectividade) {
+    public void setConectividade(String conectividade) throws Excecoes {
+        if (conectividade.isEmpty()) {
+            throw new Excecoes();
+        } else {
         this.conectividade = conectividade;
+        }
     }
-
+    
     public String getPlataforma() {
         return plataforma;
     }
 
-    public void setPlataforma(String plataforma) {
+    public void setPlataforma(String plataforma) throws Excecoes {
+        if (plataforma.isEmpty()) {
+            throw new Excecoes();
+        } else {
         this.plataforma = plataforma;
+        }
     }
 
     public float getAvaliacao() {
         return avaliacao;
     }
 
-    public void setAvaliacao(float avaliacao) {
+    public void setAvaliacao(float avaliacao)throws Excecoes {
+        if (avaliacao < 0) {
+            throw new Excecoes();
+        } else {
         this.avaliacao = avaliacao;
+        }
     }
 
     // Polimorfismo por sobreescrita, cada classe tem uma % de lucro diferente.
