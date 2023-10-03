@@ -25,5 +25,5 @@
 
 ### Vídeo de apresentação  🎥
 <div>
-    <a href="https://youtu.be/o_1fW9Om2gk"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
+    <a href="https://youtu.be/o_1fW9Om2gk" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
 </div>
