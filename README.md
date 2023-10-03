@@ -23,5 +23,5 @@
 
 #### Projeto designado pela disciplina de Programação Orientada a Objetos cursada em 2023/01 na Universidade Técnologica Federal do Paraná - UTFPR.
 
-### Vídeo de apresentação: (indísponivel)
+### Vídeo de apresentação: <a href="https://youtu.be/o_1fW9Om2gk"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
 
