@@ -1,5 +1,5 @@
 
-## Gerenciador de estoque de uma loja que vende Jogos
+## Gerenciador de estoque de uma loja de Jogos
 
 ### Objetivos ❕
 
